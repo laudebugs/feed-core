@@ -1,14 +1,14 @@
 {
-    "name": "google-news-rss",
+    "name": "feed-core",
     "version": "0.0.0-development",
     "description": "Generate RSS Feeds that work well with Google News",
-    "homepage": "https://github.com/lbugasu/google-news-rss#readme",
+    "homepage": "https://github.com/lbugasu/feed-core#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/lbugasu/google-news-rss.git"
+        "url": "https://github.com/lbugasu/feed-core.git"
     },
     "bugs": {
-        "url": "https://github.com/lbugasu/google-news-rss/issues"
+        "url": "https://github.com/lbugasu/feed-core/issues"
     },
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
