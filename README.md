@@ -24,14 +24,10 @@
 ## Install
 
 ```sh
-npm install
+npm install feed-core
 ```
 
-## Run tests
-
-```sh
-npm run test
-```
+## Usage
 
 ## Author
 
