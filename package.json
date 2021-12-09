@@ -10,7 +10,8 @@
     "bugs": {
         "url": "https://github.com/lbugasu/google-news-rss/issues"
     },
-    "main": "index.js",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "release": "standard-version",
