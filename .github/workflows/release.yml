@@ -19,6 +19,8 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
+            - name: Install packages 🤖
+              run: npm install
             - name: Release
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
