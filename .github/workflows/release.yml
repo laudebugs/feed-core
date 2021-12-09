@@ -1,7 +1,7 @@
 name: Release
 on:
     push:
-        branches: [main]
+        branches: [master, next, main]
 jobs:
     build:
         runs-on: ubuntu-latest
