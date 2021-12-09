@@ -1,0 +1,17 @@
+**/*.test.ts
+tsconfig.json
+.env
+.volumes/
+yarn-error.log
+.github/**
+coverage/
+.dependabot/
+.prettierrc.json
+.eslintrc.js
+docs
+.husky
+scripts
+package-lock.json
+.gitignore
+commitlint.config.js
+*.tgz

@@ -12,7 +12,10 @@ jobs:
               with:
                   node-version: '16.x'
                   registry-url: 'https://registry.npmjs.org'
-            - run: npm ci
+            - name: Install packages 🤖
+              run: npm install
+            - name: Build
+              run: tsc
             - run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
