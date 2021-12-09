@@ -1,7 +1,7 @@
 name: Release
 on:
     push:
-        branches: [main]
+        branches: [master, next, main]
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -19,7 +19,10 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
+            - name: Install packages 🤖
+              run: npm install
             - name: Release
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
               run: npx semantic-release
