@@ -1,6 +1,6 @@
 {
     "name": "feed-core",
-    "version": "0.0.1",
+    "version": "1.1.0",
     "description": "Generate RSS Feeds that work well with Google News",
     "homepage": "https://github.com/lbugasu/feed-core#readme",
     "repository": {
@@ -26,6 +26,8 @@
     "devDependencies": {
         "@commitlint/cli": "^15.0.0",
         "@commitlint/config-conventional": "^15.0.0",
+        "@semantic-release/changelog": "^6.0.1",
+        "@semantic-release/git": "^10.0.1",
         "@typescript-eslint/eslint-plugin": "^5.6.0",
         "@typescript-eslint/parser": "^5.6.0",
         "commitizen": "^4.2.4",
@@ -54,6 +56,12 @@
         "branches": [
             "main",
             "next"
-        ]
+        ],
+        "plugins": [
+            "@semantic-release/commit-analyzer",
+            "@semantic-release/release-notes-generator",
+            "@semantic-release/npm",
+            "@semantic-release/git"
+          ]
     }
 }
