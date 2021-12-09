@@ -8,7 +8,7 @@ export class RSSFeed {
     #feedImage!: string
     #favicon?: string
     #copyright?: string = 'All rights reserved 2021, Lau de Bugs'
-    #updatedAt?: Date
+    #updatedAt: Date = new Date()
     #feedLinks: { [index: string]: string } = {
         json: '',
         atom: '',
@@ -42,6 +42,14 @@ export class RSSFeed {
 
     get link() {
         return this.#link
+    }
+
+    set updatedAt(updatedAt: Date) {
+        this.#updatedAt = updatedAt
+    }
+
+    get updatedAt() {
+        return this.#updatedAt
     }
 
     set author(author: FeedAuthor) {
@@ -94,7 +102,7 @@ export class RSSFeed {
                 this.link
             }" rel="self" type="application/rss+xml"/>
             <language>${this.language}</language>
-            <lastBuildDate>Wed, 08 Dec 2021 23:21:47 +0000</lastBuildDate>
+            <lastBuildDate>${this.updatedAt.toUTCString()}</lastBuildDate>
             ${
                 this.#copyright
                     ? `<copyright>${this.#copyright}</copyright>`
