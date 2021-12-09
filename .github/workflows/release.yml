@@ -1,4 +1,4 @@
-name: Update Posts Archive
+name: Release
 on:
     push:
         branches: [main]
@@ -16,5 +16,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
-            - name: 'Release'
+            - name: Release
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: npx semantic-release
