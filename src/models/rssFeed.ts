@@ -167,30 +167,35 @@ export class RSSFeed {
                 <content:encoded>
                     <![CDATA[ ${item.content} ]]>
                 </content:encoded>
-                <media:content height="${
-                    item.image.height
-                }" medium="image" url="${item.image.url}" width="${
-            item.image.width
-        }"/>
                 ${
-                    item.image.thumbnail
-                        ? `<media:thumbnail url="${item.image.thumbnail}"/>`
+                    item.image
+                        ? `<media:content height="${
+                              item.image.height
+                          }" medium="image" url="${item.image.url}" width="${
+                              item.image.width
+                          }"/>
+                    ${
+                        item.image.thumbnail
+                            ? `<media:thumbnail url="${item.image.thumbnail}"/>`
+                            : ''
+                    }
+                    ${
+                        item.image.credit
+                            ? `<media:credit>
+                                <![CDATA[ ${item.image.credit} ]]>
+                                </media:credit>`
+                            : ''
+                    }
+                    ${
+                        item.image.description
+                            ? `<media:description>
+                                <![CDATA[${item.image.description}]]>
+                            </media:description>`
+                            : ''
+                    }`
                         : ''
                 }
-                ${
-                    item.image.credit
-                        ? `<media:credit>
-                            <![CDATA[ ${item.image.credit} ]]>
-                            </media:credit>`
-                        : ''
-                }
-                ${
-                    item.image.description
-                        ? `<media:description>
-                            <![CDATA[${item.image.description}]]>
-                        </media:description>`
-                        : ''
-                }
+
             </item>
             `
     }

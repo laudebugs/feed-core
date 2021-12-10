@@ -5,53 +5,54 @@ export class FeedItem {
     link!: string
     description!: string
     content!: string
+    date: Date
+    image?: FeedItemImage
     authors: FeedAuthor[] = []
-    contributor: FeedAuthor[] = []
-    date!: Date
-    image!: FeedItemImage
+    contributors: FeedAuthor[] = []
 
     constructor(
         title: string,
         link: string,
         description: string,
         content: string,
-        authors: FeedAuthor[],
-        contributor: FeedAuthor[],
-        date: Date,
-        image: FeedItemImage,
+        date?: Date,
+        image?: FeedItemImage,
+        authors?: FeedAuthor[],
+        contributors?: FeedAuthor[],
     ) {
         this.title = title
         this.link = link
         this.description = description
         this.content = content
-        this.authors = authors
-        this.contributor = contributor
-        this.date = date
-        this.image = image
+        if (date) this.date = date
+        else this.date = new Date()
+        if (authors) this.authors = authors
+        if (contributors) this.contributors = contributors
+        if (image) this.image = image
     }
 }
 
 export class FeedItemImage {
     url: string
+    height: number
+    width: number
     thumbnail?: string
     description?: string
     credit?: string
-    height: number
-    width: number
     constructor(
         url: string,
-        thumbnail: string,
-        description: string,
-        credit: string,
         height: number,
         width: number,
+        description?: string,
+        thumbnail?: string,
+        credit?: string,
     ) {
         this.url = url
-        this.thumbnail = thumbnail
-        this.description = description
-        this.credit = credit
         this.height = height
         this.width = width
+        if (thumbnail) this.thumbnail = thumbnail
+        if (description) this.description = description
+        if (credit) this.credit = credit
     }
 }
 export class FeedItemAuthor extends FeedAuthor {}
