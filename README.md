@@ -49,7 +49,7 @@ const feed = new RSSFeed({
 
 The rest of the feed properties that can be set are:
 
--   `feedAuthor`: `FeedAuthor`:
+-   feedAuthor: `FeedAuthor`:
     ```typescript
         const author = new FeedAuthor({
           name: 'Giomari Martinez',
@@ -58,19 +58,19 @@ The rest of the feed properties that can be set are:
         })
         feed.feedAuthor = author
     ```
--   `categories`: `string[]`:
+-   categories: `string[]`:
     ```typescript
     feed.categories = ['cats', 'dogs']
     ```
--   `updatedAt`: `Date`:
+-   updatedAt: `Date`:
     ```typescript
     feed.updatedAt = new Date()
     ```
--   `language`: `string`
+-   language: `string`
     ```typescript
     feed.language = 'en'
     ```
--   `image`: `string`
+-   image: `string`
     This represents the image url for the feed:
     ```typescript
     feed.image = 'https://example.com/cat-v-dogs.jpg'
