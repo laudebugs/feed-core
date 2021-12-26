@@ -4,6 +4,7 @@ export class RSSFeed {
     #title!: string
     #description!: string
     #link!: string
+    #rssLink!: string
     #language: string = 'en'
     #feedImage!: string
     #favicon?: string
@@ -17,10 +18,10 @@ export class RSSFeed {
     #items: FeedItem[] = []
     #categories: string[] = []
 
-    constructor(title: string, description: string, link: string) {
+    constructor(title: string, description: string, rssLink: string) {
         this.title = title
         this.description = description
-        this.link = link
+        this.#rssLink = rssLink
     }
 
     set title(title: string) {
@@ -99,7 +100,7 @@ export class RSSFeed {
             <description>${this.description}</description>
             <link>${this.link}</link>
             <atom:link href="${
-                this.link
+                this.#rssLink
             }" rel="self" type="application/rss+xml"/>
             <language>${this.language}</language>
             <lastBuildDate>${this.updatedAt.toUTCString()}</lastBuildDate>
